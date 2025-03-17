@@ -6,12 +6,12 @@ export default function Navber() {
     const navmenu = () => {
         return (
             <>
-                <li><Link>Home</Link></li>
+                <li><Link href={'/'}>Home</Link></li>
 
-                <li><Link>About</Link></li>
-                <li><Link>Services</Link></li>
-                <li><Link>Blog</Link></li>
-                <li><Link>Contact</Link></li>
+                <li><Link href={'/'}>About</Link></li>
+                <li><Link href={'/'}>Services</Link></li>
+                <li><Link href={'/'}>Blog</Link></li>
+                <li><Link href={'/'}>Contact</Link></li>
 
 
             </>
