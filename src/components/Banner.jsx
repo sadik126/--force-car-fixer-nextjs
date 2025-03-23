@@ -10,7 +10,7 @@ export default function Banner() {
                 <div id="slide1" className="carousel-item relative w-full ">
                     <Image
                         src={'/assets/images/banner/10.jpg'}
-
+                        alt='banner'
                         width={2000}
                         height={200}
                         className="w-full h-[30rem] md:h-[40rem] lg:h-[50rem]"
@@ -48,7 +48,7 @@ export default function Banner() {
                 <div id="slide2" className="carousel-item relative w-full ">
                     <Image
                         src={'/assets/images/banner/8.jpg'}
-
+                        alt='banner'
                         width={2000}
                         height={200}
                         className="w-full h-[30rem] md:h-[40rem] lg:h-[50rem]"
@@ -87,7 +87,7 @@ export default function Banner() {
                 <div id="slide3" className="carousel-item relative w-full ">
                     <Image
                         src={'/assets/images/banner/9.jpg'}
-
+                        alt='banner'
                         width={2000}
                         height={200}
                         className="w-full h-[30rem] md:h-[40rem] lg:h-[50rem]"

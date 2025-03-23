@@ -9,10 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.482.0",
-    "next": "15.2.2",
+    "mongodb": "^4.15.0",
+    "next": "^15.2.3",
+    "next-auth": "^4.24.11",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

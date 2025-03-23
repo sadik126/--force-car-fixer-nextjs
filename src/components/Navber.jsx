@@ -4,9 +4,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from "react";
 import { Menu, Search, ShoppingBag } from "lucide-react";
+import { signOut, useSession, } from 'next-auth/react';
 
 export default function Navber() {
     const [isOpen, setIsOpen] = useState(false);
+    const { data: sessiondata, status } = useSession();
+    // console.log(session)
     const navmenu = () => {
         return (
             <>
@@ -16,6 +19,7 @@ export default function Navber() {
                 <li><Link href={'/'}>Services</Link></li>
                 <li><Link href={'/'}>Blog</Link></li>
                 <li><Link href={'/'}>Contact</Link></li>
+
 
 
             </>
@@ -53,11 +57,24 @@ export default function Navber() {
                 <div className="flex items-center space-x-4">
                     <Search size={22} className="cursor-pointer" />
                     <ShoppingBag size={22} className="cursor-pointer" />
-                    <Link href="/appointment">
-                        <button className="btn btn-outline text-amber-700">
-                            Appointment
-                        </button>
-                    </Link>
+
+                    {
+                        status === 'authenticated' ? <><Link href="/login">
+                            <button onClick={() => signOut()} className="btn btn-outline text-amber-700">
+                                Log out
+                            </button>
+                        </Link></> : <> <Link href="/login">
+                            <button className="btn btn-outline text-amber-700">
+                                Login
+                            </button>
+                        </Link>
+                            <Link href="/signup">
+                                <button className="btn btn-outline text-amber-700">
+                                    Register
+                                </button>
+                            </Link></>
+                    }
+
                 </div>
             </div>
 
