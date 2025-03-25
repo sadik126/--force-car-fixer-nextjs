@@ -9,7 +9,7 @@ import { signOut, useSession, } from 'next-auth/react';
 export default function Navber() {
     const [isOpen, setIsOpen] = useState(false);
     const { data: sessiondata, status } = useSession();
-    // console.log(session)
+    console.log(sessiondata)
     const navmenu = () => {
         return (
             <>
@@ -18,7 +18,7 @@ export default function Navber() {
                 <li><Link href={'/'}>About</Link></li>
                 <li><Link href={'/'}>Services</Link></li>
                 <li><Link href={'/'}>Blog</Link></li>
-                <li><Link href={'/'}>Contact</Link></li>
+                <li><Link href={'/mybooking'}>My booking</Link></li>
 
 
 
@@ -60,6 +60,7 @@ export default function Navber() {
 
                     {
                         status === 'authenticated' ? <><Link href="/login">
+                            <span className='mr-5 text-red-700'>{sessiondata?.user?.name}</span>
                             <button onClick={() => signOut()} className="btn btn-outline text-amber-700">
                                 Log out
                             </button>

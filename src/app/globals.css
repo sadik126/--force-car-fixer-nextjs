@@ -8,6 +8,13 @@
   background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(31,29,29,0.38699229691876746) 35%, rgba(222,227,228,0) 100%);
 }
 
+@layer components {
+  .custom-prev.swiper-button-disabled,
+  .custom-next.swiper-button-disabled {
+    @apply bg-gray-700 opacity-50 cursor-not-allowed;
+  }
+}
+
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;

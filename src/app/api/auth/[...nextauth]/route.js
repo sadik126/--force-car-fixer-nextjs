@@ -1,6 +1,8 @@
 import loginUser from "@/app/actions/auth/loginUser";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
+import GitHubProvider from "next-auth/providers/github";
 
 const authOptions = {
     providers: [
@@ -13,7 +15,7 @@ const authOptions = {
             async authorize(credentials) {
                 console.log("Received Credentials:", credentials);
 
-                const res = await fetch("http://localhost:6090/login", {
+                const res = await fetch("https://backend-z7le.onrender.com/login", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(credentials),
@@ -40,7 +42,7 @@ const authOptions = {
                 //     password: "password123",
                 // };
 
-                // fetch('http://localhost:6090/login', {
+                // fetch('https://backend-z7le.onrender.com/login', {
                 //     method: 'POST',
                 //     headers: {
                 //         'Content-Type': 'application/json',
@@ -68,9 +70,49 @@ const authOptions = {
                 // throw new Error("Invalid email or password!");
             },
         }),
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET
+        }),
+        GitHubProvider({
+            clientId: process.env.GITHUB_ID,
+            clientSecret: process.env.GITHUB_SECRET
+        })
     ],
     pages: {
         signIn: "/login",
+    },
+    secret: process.env.NEXTAUTH_SECRET,
+    callbacks: {
+        async signIn({ user, account, profile, email, credentials }) {
+            console.log({ user, account, profile, email, credentials })
+
+            if (account) {
+                const { providerAccountId, provider } = account
+                const { email: user_email, image, name } = user
+
+                const googleUser = {
+                    image, name, email: user_email, provider, providerAccountId
+                }
+
+                try {
+                    const res = await fetch("https://backend-z7le.onrender.com/google-login", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(googleUser),
+                    });
+
+                    const data = await res.json();
+                    if (!res.ok) throw new Error(data.message);
+                    // / MongoDB theke asha user er ID store korbo
+                } catch (error) {
+                    console.error("Google login API error:", error);
+                }
+            }
+            return true
+        }
     },
     debug: true, // Debug mode on
 };

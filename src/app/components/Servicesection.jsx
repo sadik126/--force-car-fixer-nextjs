@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router';
 
 import React, { useEffect, useState } from 'react'
+import Loading from '../services/[id]/Loading';
 
 export default function Servicesection() {
 
@@ -19,19 +20,21 @@ export default function Servicesection() {
 
 
     const [services, setServices] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        // const serviceCollection = dbConnect('services')
-        // const data = serviceCollection.find({}).toArray();
-        // setServices(data)
-        // const serviceSection = async () => {
-
-        // }
-        // serviceSection()
-        fetch('http://localhost:6090/services')
+        setLoading(true)
+        fetch('https://backend-z7le.onrender.com/services')
             .then(res => res.json())
-            .then(data => setServices(data))
+            .then(data => {
+                setServices(data)
+                setLoading(false)
+            })
     }, [])
+
+    if (loading) {
+        return <Loading></Loading>
+    }
     return (
         <div>
             <p className="text-center mt-5 mb-2 text-orange-500">service</p>

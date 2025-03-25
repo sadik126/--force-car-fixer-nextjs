@@ -14,7 +14,7 @@ export default function Servicesdetails() {
 
     useEffect(() => {
         if (id) {
-            fetch(`http://localhost:6090/services/${id}`)
+            fetch(`https://backend-z7le.onrender.com/services/${id}`)
                 .then(res => res.json())
                 .then(data => setService(data))
                 .catch(err => console.error(err));
@@ -105,9 +105,9 @@ export default function Servicesdetails() {
                 {/* Right Section (Pricing) */}
                 <div className="lg:col-start-3 text-3xl md:text-4xl lg:text-5xl font-mono font-extrabold text-center">
                     <p className="mb-6">Price: <span className="text-amber-700">${service?.price}</span></p>
-                    <button className="btn btn-lg md:btn-md lg:btn-lg bg-amber-700 text-white w-full py-3 md:py-2 lg:py-4 rounded-md">
+                    <Link href={`/checkout/${service?._id}`} className="btn btn-lg md:btn-md lg:btn-lg bg-amber-700 text-white w-full py-3 md:py-2 lg:py-4 rounded-md">
                         Checkout
-                    </button>
+                    </Link>
                 </div>
             </div>
 

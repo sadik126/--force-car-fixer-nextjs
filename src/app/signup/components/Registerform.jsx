@@ -14,7 +14,7 @@ export default function Registerform() {
         const password = form.password.value
 
 
-        fetch('http://localhost:6090/register', {
+        fetch('https://backend-z7le.onrender.com/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
