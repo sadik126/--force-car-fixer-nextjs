@@ -38,7 +38,7 @@ export default function Products() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
                 {products.slice(0, visibleCount).map((product) => (
-                    <Product key={product.id} product={product} />
+                    <Product key={product._id} product={product} />
                 ))}
             </div>
             <div className="flex justify-center items-center mt-8">
