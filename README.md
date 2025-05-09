@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+![Bistro Boss Banner](https://i.ibb.co.com/WRVgv6c/car-fixer.png)
 
-First, run the development server:
+# 🚗 Car Fixer
+
+**Car Fixer** is a web application that allows users to get their car repair and maintenance needs fulfilled. With an easy-to-use interface, users can schedule car repair services and explore various car-related solutions. Built with the MERN stack, this application provides a smooth experience for both customers and service providers.
+
+## 🔗 Live Website
+
+👉 [Car Fixer Live](https://car-fixer-sadik126s-projects.vercel.app/)
+
+## 🛠️ Key Features
+
+- 🔧 **Car Repair Services** – Request and schedule car repair services.
+- 📅 **Service Scheduling** – Easily book and schedule appointments.
+- 🧭 **Responsive Design** – Access the website seamlessly on mobile, tablet, and desktop.
+- 🛠️ **Service History** – View and track past service appointments and details.
+- 🚀 **Fast & Secure** – Hosted on Vercel for a fast and reliable user experience.
+
+## 🧰 Technologies Used
+
+| Technology                                                                                    | Description                                                |
+| --------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| ![MongoDB](https://img.icons8.com/color/48/000000/mongodb.png) **MongoDB**                    | NoSQL database for storing application data                |
+| ![Express.js](https://img.icons8.com/ios/50/000000/express-js.png) **Express.js**             | Backend framework for handling API routes                  |
+| ![React.js](https://img.icons8.com/color/48/000000/react-native.png) **React.js**             | Frontend library for building interactive UIs              |
+| ![Node.js](https://img.icons8.com/color/48/000000/nodejs.png) **Node.js**                     | JavaScript runtime for server-side logic                   |
+| ![Tailwind CSS](https://img.icons8.com/color/48/000000/tailwindcss.png) **Tailwind CSS**      | Utility-first CSS framework for fast UI development        |
+| ![Firebase Hosting](https://img.icons8.com/color/48/000000/firebase.png) **Firebase Hosting** | Hosting platform for deploying the client-side app         |
+
+
+
+## 🚀 Setting Up the Project Locally
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/sadik126/Bistro-boss.git
+cd Bistro-boss
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit: [http://localhost:5173](http://localhost:5173)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project is divided into two main parts:
 
-## Learn More
+- **Client** – Built with React.js, Tailwind CSS, DaisyUI, Firebase Auth, React Router DOM, React Hook Form, React Icons, Stripe, etc.  
+- **Server** – Built with Express.js, MongoDB, JWT, Stripe, etc.
 
-To learn more about Next.js, take a look at the following resources:
+## 🤝 Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feel free to fork this repository, make your changes, and submit a pull request. Contributions are always welcome!
